@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">statistics</a> &gt; <a href="index.source.html" class="el_package">ru.netology</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology;
+
+<span class="fc" id="L3">public class Radio {</span>
+    private int numberStation;
+    private int soundVolume;
+<span class="fc" id="L6">    private int maxStation = 9;</span>
+<span class="fc" id="L7">    private int minStation = 0;</span>
+<span class="fc" id="L8">    private int maxVolume = 10;</span>
+<span class="fc" id="L9">    private int minVolume = 0;</span>
+
+    public int getNumberStation() {
+<span class="fc" id="L12">        return numberStation;</span>
+    }
+
+    public void setNumberStation(int numberStation) {
+<span class="fc bfc" id="L16" title="All 4 branches covered.">        if (numberStation &gt;= minStation &amp;&amp; numberStation &lt;= maxStation) this.numberStation = numberStation;</span>
+<span class="fc" id="L17">    }</span>
+
+    public void next() {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (numberStation == maxStation) {</span>
+<span class="fc" id="L21">            numberStation = minStation;</span>
+<span class="fc" id="L22">            return;</span>
+        }
+<span class="fc" id="L24">        numberStation++;</span>
+<span class="fc" id="L25">    }</span>
+
+    public void prev() {
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (numberStation == minStation) {</span>
+<span class="fc" id="L29">            numberStation = maxStation;</span>
+<span class="fc" id="L30">            return;</span>
+        }
+<span class="fc" id="L32">        numberStation--;</span>
+<span class="fc" id="L33">    }</span>
+
+    public int getSoundVolume() {
+<span class="fc" id="L36">        return soundVolume;</span>
+    }
+
+    public void plus() {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (soundVolume == maxVolume) return;</span>
+<span class="fc" id="L41">        soundVolume++;</span>
+<span class="fc" id="L42">    }</span>
+
+    public void minus() {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (soundVolume == minVolume) return;</span>
+<span class="fc" id="L46">        soundVolume--;</span>
+<span class="fc" id="L47">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
